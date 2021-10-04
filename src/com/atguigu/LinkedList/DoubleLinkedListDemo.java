@@ -3,6 +3,43 @@ package com.atguigu.LinkedList;
 public class DoubleLinkedListDemo {
 
     public static void main(String[] args) {
+        //测试
+//        System.out.println("双向链表的测试");
+        //先创建节点
+        HeroNode2 hero1 = new HeroNode2(1, "宋江", "及时雨");
+        HeroNode2 hero2 = new HeroNode2(2, "卢俊义", "玉麒麟");
+        HeroNode2 hero3 = new HeroNode2(3, "吴用", "智多星");
+        HeroNode2 hero4 = new HeroNode2(4, "林冲", "豹子头");
+        //创建一个双向链表
+        DoubleLinkedList doubleLinkedList = new DoubleLinkedList();
+
+        //添加元素
+//        doubleLinkedList.add(hero1);
+//        doubleLinkedList.add(hero2);
+//        doubleLinkedList.add(hero3);
+//        doubleLinkedList.add(hero4);
+//        doubleLinkedList.list();
+
+        //按编号加入表元素
+        doubleLinkedList.addByOrder(hero1);
+        doubleLinkedList.addByOrder(hero4);
+        doubleLinkedList.addByOrder(hero2);
+        doubleLinkedList.addByOrder(hero3);
+        doubleLinkedList.addByOrder(hero3);
+        System.out.println("按顺序添加元素测试~");
+        doubleLinkedList.list();
+
+
+        //修改
+//        HeroNode2 newHeroNode = new HeroNode2(4,"公孙胜","入云龙");
+//        doubleLinkedList.update(newHeroNode);
+//        System.out.println("修改后的链表情况");
+//        doubleLinkedList.list();
+
+        //删除
+//        doubleLinkedList.del(3);
+//        System.out.println("删除后的链表情况~");
+//        doubleLinkedList.list();
 
     }
 
@@ -41,7 +78,7 @@ class DoubleLinkedList {
         }
     }
 
-    //添加节点到双向链表最后
+    //添加节点
     public void add(HeroNode2 heroNode) {
 
         //因为head节点不能动，因此我们需要一个辅助遍历 temp
@@ -61,6 +98,36 @@ class DoubleLinkedList {
         heroNode.pre = temp;
     }
 
+    //按顺序添加节点
+    public void addByOrder(HeroNode2 heronode) {
+        //因为头结点不能动，因此我们仍然通过一个辅助指针（变量）来帮助找到添加的位置
+        if (head.next == null) {   //判断是否为空链表
+            heronode.pre = head;
+            head.next = heronode;
+            return;
+        }
+        HeroNode2 temp = head;
+        boolean flag = false;//flag标志添加的编号是否存在，默认为false
+        while (true) {
+            if (temp.no > heronode.no) {  //位置已经找到，就在temp后面插入
+                heronode.pre = temp.pre;
+                heronode.next = temp;
+                temp.pre.next = heronode;
+                temp.pre = heronode;
+                break;
+            } else if (temp.no == heronode.no) {   //想插入的编号已经存在
+                flag = true;  //编号存在
+                System.out.printf("准备插入的英雄编号%d已经存在，不能加入\n", heronode.no);
+                break;
+            }
+            if (temp.next == null) {       //说明temp已经到链表的最后
+                heronode.pre = temp;
+                temp.next = heronode;
+                break;
+            }
+            temp = temp.next;
+        }
+    }
 
     //更新节点
     public void update(HeroNode2 newHeroNode) {
@@ -118,7 +185,9 @@ class DoubleLinkedList {
         if (flag) {  //找到
             //删除
             temp.pre.next = temp.next;
-            temp.next.pre = temp.pre;
+            if (temp.next != null) {
+                temp.next.pre = temp.pre;
+            }
         } else {
             System.out.printf("要删除的%d 节点不存在\n", no);
         }
