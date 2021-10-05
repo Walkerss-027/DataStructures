@@ -8,8 +8,8 @@ import java.util.Stack;
 public class PolandNotation {
     public static void main(String[] args) {
         //先定义逆波兰表达式
-        //(3+4)x5-6 => 3 4 + 5 x 6 -
-        String suffixExpression = "3 4 + 5 x 6 -";
+        //(30+4)x5-6 => 30 4 + 5 x 6 - => 164
+        String suffixExpression = "30 4 + 5 x 6 -";
         //思路
         //1.先将“3 4 + 5 x 6 -” =>放入到ArrayList中
         //2.将 ArrayList 传递给一个方法，遍历 ArrayList 配合栈完成
