@@ -6,11 +6,12 @@ public class Queen8 {
     //定义数组array，保存皇后放置位置的结果，比如 arr = {0,4,7,5,2,6,1,3}
     int[] array = new int[max];
     static int count = 0;
-
+    static int judgecount=0;
     public static void main(String[] args) {
         Queen8 queen8 = new Queen8();
         queen8.check(0);    //check内有print()方法 所以不用打印
         System.out.printf("一共有%d种方法", count);
+        System.out.printf("一共判断冲突的次数%d", judgecount);
     }
 
 
@@ -23,11 +24,12 @@ public class Queen8 {
         }
         //依次放入皇后，并判断是否冲突
         for (int i = 0; i < max; i++) {
+            judgecount++;
             array[n] = i;   //先把当前这个皇后n，放到该行的第1列
             if (judge(n)) { //判断当放置第n个皇后到i列时，是否冲突
                 check(n + 1);   //接着放n+1个皇后，即开始递归 这里check了多少次就执行了多少次print count就++了多少次
             }
-            //如果冲突，就继续执行 array[n]=1;即将第n个皇后，放置再本行的后移的一个位置
+             //如果冲突，就继续执行 array[n]=1;即将第n个皇后，放置再本行的后移的一个位置
         }
     }
 
