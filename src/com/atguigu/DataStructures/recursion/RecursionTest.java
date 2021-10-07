@@ -1,4 +1,4 @@
-package com.atguigu.recursion;
+package com.atguigu.DataStructures.recursion;
 
 public class RecursionTest {
 

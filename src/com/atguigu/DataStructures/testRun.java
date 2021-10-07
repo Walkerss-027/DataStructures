@@ -1,4 +1,4 @@
-package com.atguigu;
+package com.atguigu.DataStructures;
 
 public class testRun {
     public static void main(String[] args) {

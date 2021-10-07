@@ -1,4 +1,4 @@
-package com.atguigu.SparseArray;
+package com.atguigu.DataStructures.SparseArray;
 
 public class SparseArray {
 

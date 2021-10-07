@@ -1,4 +1,4 @@
-package com.atguigu.LinkedList;
+package com.atguigu.DataStructures.LinkedList;
 
 public class DoubleLinkedListDemo {
 

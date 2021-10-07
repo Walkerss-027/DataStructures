@@ -1,4 +1,4 @@
-package com.atguigu.LinkedList;
+package com.atguigu.DataStructures.LinkedList;
 
 import java.util.Stack;
 

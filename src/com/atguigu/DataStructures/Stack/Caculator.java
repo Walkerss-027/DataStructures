@@ -1,4 +1,4 @@
-package com.atguigu.Stack;
+package com.atguigu.DataStructures.Stack;
 
 public class Caculator {
 

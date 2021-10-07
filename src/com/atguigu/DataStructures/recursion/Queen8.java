@@ -1,4 +1,4 @@
-package com.atguigu.recursion;
+package com.atguigu.DataStructures.recursion;
 
 public class Queen8 {
     //定义一个max表示共有多少个皇后
