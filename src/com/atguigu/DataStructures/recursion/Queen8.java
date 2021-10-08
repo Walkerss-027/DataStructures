@@ -4,7 +4,7 @@ public class Queen8 {
     //定义一个max表示共有多少个皇后
     int max = 8;
     //定义数组array，保存皇后放置位置的结果，比如 arr = {0,4,7,5,2,6,1,3}
-    int[] array = new int[max];
+    int[] array = new int[max];     //使用一维数组的原因是 一维数组的索引就可以代表列，其中放的 value 可以用来表示行高，实现了棋盘的功能
     static int count = 0;
     static int judgecount=0;
     public static void main(String[] args) {
@@ -18,10 +18,13 @@ public class Queen8 {
     //编写一个方法，放置第n个皇后
     //特别注意：check是每一次递归时，都有for(int i =0 ; i< max;i++),因此会有回溯
     private void check(int n) {
-        if (n == max) {  //n=8，其实8个皇后就已经放好了
+
+        //递归停止的条件
+        if (n == max) {  //n=8，其实8个皇后就已经放好了 即一种可能执行到了最后
             print();
             return;
         }
+
         //依次放入皇后，并判断是否冲突
         for (int i = 0; i < max; i++) {
             judgecount++;

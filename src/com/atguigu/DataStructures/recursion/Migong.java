@@ -90,7 +90,7 @@ public class Migong {
     }
 
     //修改找路的策略，改成 上->右->下->左
-    public  static boolean setWay2(int[][] map,int i ,int j){
+    public  static boolean setWay2(int[][] map,int i ,int j){   //返回 boolean 值用于下面 if 递归时的判断
         if (map[6][5]==2){  //通路已经找到
             return true;
         }else {
