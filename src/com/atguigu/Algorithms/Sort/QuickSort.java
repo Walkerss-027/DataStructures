@@ -5,6 +5,7 @@ import java.util.Arrays;
 import java.util.Date;
 
 public class QuickSort {
+    //快速排序核心思想：双向指针向中间移动，比较元素大小并换位，再加上递归
 
     public static void main(String[] args) {
         //int[] arr = {-9, 78, 0, 23, -567, 70,-1,200,4567};
@@ -38,11 +39,11 @@ public class QuickSort {
         //while 循环得到的结果是把比 pivot 小的值放左边 比 pivot 大的值放右边
         while (low < high) { //左右下标未相遇
 
-            while (arr[low] < pivot) {//目的是在 pivot 左边一直找，找到大于等于 pivot 值才退出
+            while (arr[low] < pivot) {  //目的是从左往右找，直到找到大于等于 pivot 值才退出
                 low += 1;
             }
 
-            while (arr[high] > pivot) {//目的是在 pivot 右边一直找，找到小于等于 pivot 值才退出
+            while (arr[high] > pivot) { //目的是从右往左找，直到找到小于等于 pivot 值才退出
                 high -= 1;
             }
 
@@ -50,10 +51,12 @@ public class QuickSort {
                 break;
             }
 
+            //交换 arr[low] 和 arr[high] 的值
             temp = arr[low];
             arr[low] = arr[high];
             arr[high] = temp;
 
+            //对特殊情况的处理
             if (arr[low] == pivot) {  //交换完后，发现 arr[l] == pivot ， r-- 前移
                 high -= 1;
             }
@@ -81,6 +84,7 @@ public class QuickSort {
 
 
     //CSDN 两个哨兵 ，基准设在首元素 实现快排 比上面清晰一点
+
     /*
        public static void quickSort(int[] arr, int low, int high) {
         // low,high 为每次处理数组时的首、尾元素索引
