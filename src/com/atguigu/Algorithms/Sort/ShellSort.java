@@ -110,11 +110,12 @@ public class ShellSort {
         //增量gap，并逐步缩小增量
         for (int gap = arr.length / 2; gap > 0; gap /= 2) {
             //从第gap个元素，对其所在的组进行直接插入排序
-            for (int i = gap; i < arr.length; i++) {    //相当与从第 gap 元素开始从左向右遍历数组 因为 后面要从 j - gap 开始从右向左遍历
+            for (int i = gap; i < arr.length; i++) {    //相当与从第 gap 元素开始从左向右遍历数组 因为 后面有用到 j - gap
                 int j = i;
                 int temp = arr[j];
+                //插入排序
                 if (arr[j] < arr[j - gap]) {    //右边的小于左边
-                    while (j - gap >= 0 && temp < arr[j - gap]) {   //while 结束时 j 即为应该插入的位置
+                    while (j - gap >= 0 && temp < arr[j - gap]) {   //左边的比 temp 大，while 结束时 j 即为应该插入的位置
                         //移动
                         arr[j] = arr[j - gap];  //把大的往后移
                         j -= gap;
@@ -122,6 +123,7 @@ public class ShellSort {
                     //当退出while后，就给temp找到插入的位置
                     arr[j] = temp;
                 }
+
             }
         }
 
