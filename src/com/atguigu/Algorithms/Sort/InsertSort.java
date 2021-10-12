@@ -34,18 +34,22 @@ public class InsertSort {
     public static void insertSort(int arr[]) {
 
         //使用for循环将代码简化
-        for (int i = 0; i < arr.length; i++) {
+        for (int i = 0; i < arr.length; i++) {  //循环 arr.length 次
 
-            int insertVal = arr[i];   //定义待插入的数
-            int insertIndex = i - 1;  //即arr[1]的前面这个数的下标
+            int insertVal = arr[i];   //将待插入的数赋值给 insertVal
+            int insertIndex = i - 1;  //即 arr[i] 前一个数的下标
 
-            //给ubsertVal 找到插入的位置
+            //给 insertVal 找到插入的位置
             //说明
+            //从后往前遍历
             //1.insertIndex >= 0 保证在个insertVal 找插入位置，不越界
             //2.insertVal < arr[insertIndex] 待插入的数，还没有找到插入位置
             //3.就要将 arr[insertIndex] 后移
-            while (insertIndex >= 0 && insertVal < arr[insertIndex]) {   //insertIndex 从i-1 开始遍历 到0（边界）
-                arr[insertIndex + 1] = arr[insertIndex]; //将大的值往后放一位 arr[insertIndex +1] 相当于一个辅助指针，insertVal值一直没有变
+
+            //insertIndex 从i-1 开始遍历 到0（边界）
+            while (insertIndex >= 0 && insertVal < arr[insertIndex]) {  //每一次都是和 insertVal 的值比
+                //将大的值往后放一位，insertVal 的值一直没有变
+                arr[insertIndex + 1] = arr[insertIndex];
                 insertIndex--;  //insertIndex 前移
             }
             if (insertIndex + 1 != i) {

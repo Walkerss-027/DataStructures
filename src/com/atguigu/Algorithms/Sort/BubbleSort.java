@@ -71,6 +71,7 @@ public class BubbleSort {
 
     //将前面的冒泡排序算法，封装成一个方法
     //总结：
+    //每一次外循环把 最大的 放在最后
     //1.冒泡排序由两层循环组成，时间复杂度为 O(n^2) 是一种稳定的排序方法，但数据量较大时花费的时间较长
     //2.外循环控制循环的次数，循环 i < arr.length - 1 次
     //3.内循环遍历数组，循环 arr.length - 1 - i 次，在内循环里对比 arr[j] 和 arr[j + 1] 的大小，并对相邻元素进行排序
@@ -79,8 +80,8 @@ public class BubbleSort {
         int temp = 0;   //临时变量
         boolean flag = false; //标识变量，表示是否进行过交换
         //第一趟排序，就是把最大的数放在最后
-        for (int i = 0; i < arr.length - 1; i++) {      //外循环控制循环的次数
-            for (int j = 0; j < arr.length - 1 - i; j++) {      //内循环控制从第 j 个开始遍历 循环 arr.length - 1 - i 次 即遍历到倒数第二个元素
+        for (int i = 0; i < arr.length - 1; i++) {      //外循环控制循环的次数为 arr.length - 1 次
+            for (int j = 0; j < arr.length - 1 - i; j++) {      //内循环控制从第 1 个开始遍历 循环 arr.length - 1 - i 次 即遍历到倒数第二个元素
                 if (arr[j] > arr[j + 1]) {  //如果前面的数比后面的数大，则交换
                     flag = true;
                     temp = arr[j];

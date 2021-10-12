@@ -40,6 +40,7 @@ public class SelectSort {
     //优化思路： 一次外循环最后 如果 midIndex 没有发生改变说明已经排序好了
 
     public static void selectSort(int[] arr) {
+
         for (int i = 0; i < arr.length - 1; i++) {  //从索引i开始 循环 arr.length - 1 次
             int minIndex = i;   //minIndex指向最小值，是最小值的索引
             int min = arr[i];   //假定arr[i]是最小值
@@ -52,7 +53,7 @@ public class SelectSort {
                 }
             }
 
-            if (minIndex != i) {    //即 循环一次 minIndex 的值没有发生改变 说明已经排好序了
+            if (minIndex != i) {    //即 循环一次 minIndex 的值没有发生改变 说明已经排好序了（minIndex 初始赋值为 i）
                 arr[minIndex] = arr[i];
                 arr[i] = min;
             }
