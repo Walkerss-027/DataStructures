@@ -78,7 +78,7 @@ class DoubleLinkedList {
         }
     }
 
-    //添加节点
+    //添加节点到最后
     public void add(HeroNode2 heroNode) {
 
         //因为head节点不能动，因此我们需要一个辅助遍历 temp
