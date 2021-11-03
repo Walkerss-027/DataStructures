@@ -15,22 +15,22 @@ public class BubbleSort {
 //        System.out.println(Arrays.toString(arr));
 
 
-        int[] arr=new int[80000];
-        for (int i=0; i<80000;i++){
-            arr[i]=(int)(Math.random()*800000); //生成一个[0,800000) 数
+        int[] arr = new int[80000];
+        for (int i = 0; i < 80000; i++) {
+            arr[i] = (int) (Math.random() * 800000); //生成一个[0,800000) 数
         }
 
-        Date date1=new Date();
+        Date date1 = new Date();
         SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
-        String date1Str=simpleDateFormat.format(date1);
-        System.out.println("排序前的时间是="+date1Str);
+        String date1Str = simpleDateFormat.format(date1);
+        System.out.println("排序前的时间是=" + date1Str);
 
         //测试冒泡排序
         Bubblesort(arr);
 
-        Date date2=new Date();
-        String date2Str=simpleDateFormat.format(date2);
-        System.out.println("排序后的时间是="+date2Str);
+        Date date2 = new Date();
+        String date2Str = simpleDateFormat.format(date2);
+        System.out.println("排序后的时间是=" + date2Str);
 
 
 //        System.out.println("排序后");

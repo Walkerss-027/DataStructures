@@ -39,12 +39,15 @@ public class InsertSort {
             int insertVal = arr[i];   //将待插入的数赋值给 insertVal
             int insertIndex = i - 1;  //即 arr[i] 前一个数的下标
 
-            //给 insertVal 找到插入的位置
-            //说明
-            //从后往前遍历
-            //1.insertIndex >= 0 保证在个insertVal 找插入位置，不越界
-            //2.insertVal < arr[insertIndex] 待插入的数，还没有找到插入位置
-            //3.就要将 arr[insertIndex] 后移
+            /*
+            给 insertVal 找到插入的位置
+            说明
+            从后往前遍历
+            1.insertIndex >= 0 保证在个insertVal 找插入位置，不越界
+            2.insertVal < arr[insertIndex] 待插入的数，还没有找到插入位置
+            3.就要将 arr[insertIndex] 后移
+             */
+
 
             //insertIndex 从i-1 开始遍历 到0（边界）
             while (insertIndex >= 0 && insertVal < arr[insertIndex]) {  //每一次都是和 insertVal 的值比
