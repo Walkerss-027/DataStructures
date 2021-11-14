@@ -5,6 +5,9 @@ import java.util.Arrays;
 import java.util.Date;
 
 public class InsertSort {
+    /*
+    插入排序是 稳定 排序
+     */
 
     public static void main(String[] args) {
         //int[] arr={101,34,119,1,-1,89};

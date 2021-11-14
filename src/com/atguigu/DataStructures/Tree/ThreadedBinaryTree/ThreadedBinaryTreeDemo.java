@@ -101,22 +101,26 @@ class ThreadedBinaryTree {
             2)处理后继结点
         3.最后线索化右子树
          */
-        threadedNodes(node.getLeft());
+        threadedNodes(node.getLeft());  //线索化左子树
 
+        //处理当前结点的前驱结点
         if (node.getLeft() == null) {   //当前结点没有左子结点
             //让当前结点的左指针指向前驱结点
-            node.setLeft(pre);
+            node.setLeft(pre);  //第一个结点时，因为没有前驱结点，此时 pre 也为 null ,所以也相当于指向了 pre
             //修改当前结点左指针类型，指向前驱结点
             node.setLeftType(1);
         }
-        if (pre != null && pre.getRight() == null) {
-            pre.setRight(node);     //让前驱结点的右指针指向当前结点
-            pre.setRightType(1);    //修改前驱结点的右指针类型
+        //处理后继结点
+        if (pre != null && pre.getRight() == null) {    //第一个结点时不用执行这个 if 因为 pre = null
+            //让前驱结点的右指针指向当前结点
+            pre.setRight(node);
+            //修改前驱结点的右指针类型
+            pre.setRightType(1);
         }
         // ！！！ 每处理一个结点，让当前结点是下一个结点的前驱结点
         pre=node;
 
-        threadedNodes(node.getRight());
+        threadedNodes(node.getRight()); //线索化右子树
 
 
     }

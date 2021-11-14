@@ -5,7 +5,10 @@ import java.util.Arrays;
 import java.util.Date;
 
 public class MergeSort {
-    //核心思想：分治+递归
+    /*
+    归并排序是 稳定 排序
+    核心思想：分治+递归
+     */
 
     public static void main(String[] args) {
         //int[] arr = {8, 4, 5, 7, 1, 3, 6, 2};

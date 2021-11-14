@@ -5,6 +5,9 @@ import java.util.Arrays;
 import java.util.Date;
 
 public class RadixSort {
+    /*
+    基数排序是 稳定 排序
+     */
     public static void main(String[] args) {
         //int[] arr = {53, 3, 542, 748, 14, 214};
 

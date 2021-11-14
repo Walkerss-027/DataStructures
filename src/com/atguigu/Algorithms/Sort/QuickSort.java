@@ -5,7 +5,10 @@ import java.util.Arrays;
 import java.util.Date;
 
 public class QuickSort {
-    //快速排序核心思想：双向指针向中间移动，比较元素大小并换位，再加上递归
+    /*
+    快排是 不稳定 排序
+    快速排序核心思想：双向指针向中间移动，比较元素大小并换位，再加上递归
+     */
 
     public static void main(String[] args) {
         //int[] arr = {-9, 78, 0, 23, -567, 70,-1,200,4567};

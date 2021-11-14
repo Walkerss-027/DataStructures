@@ -6,6 +6,9 @@ import java.util.Date;
 import java.util.SimpleTimeZone;
 
 public class BubbleSort {
+    /*
+    冒泡排序是 稳定 排序
+     */
 
     public static void main(String[] args) {
 
