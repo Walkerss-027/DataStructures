@@ -3,6 +3,7 @@ package com.atguigu.Algorithm.Dynamic;
 public class KnapsackProblem {
     public static void main(String[] args) {
         /*
+        动态规划
         0-1背包问题：
         逐渐增加背包容量
         判断：
