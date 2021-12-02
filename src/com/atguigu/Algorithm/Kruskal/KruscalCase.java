@@ -57,7 +57,7 @@ public class KruscalCase {
             }
         }
 
-        //统计边
+        //统计边(所有边)
         for (int i = 0; i < vlen; i++) {
             for (int j = i + 1; j < vlen; j++) {
                 if (this.matrix[i][j] != INF) {
@@ -144,7 +144,7 @@ public class KruscalCase {
         //按照边的权值大小进行排序（从小到大）
         sortEnges(edges);
 
-        //遍历 edges 数组，将边添加到最小生成树中时，判断准备加入的边是否形成回路
+        //遍历 edges 数组，将边添加到最小生成树中时，判断准备加入的边是否形成回路（难点）
         for (int i = 0; i < edgeNum; i++) {
             //获取第 i 条边的第一个顶点
             int p1 = getPosition(edges[i].start);
@@ -158,7 +158,7 @@ public class KruscalCase {
             //是否构成回路
             if (m != n) {   //没有构成回路
                 ends[m] = n;    // 设置 m 在已有最新小生成树中的终点
-                rets[index++] = edges[i];     //有一条鞭加入到 rets 数组
+                rets[index++] = edges[i];     //有一条边加入到 rets 数组
             }
         }
 
